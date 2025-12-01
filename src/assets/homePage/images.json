@@ -1,0 +1,18 @@
+[
+  { "name": "aboutus1", "alt": "aboutus1", "src": "./aboutus1.webp" },
+  { "name": "aboutus2", "alt": "aboutus2", "src": "./aboutus2.webp" },
+  { "name": "aboutus3", "alt": "aboutus3", "src": "./aboutus3.webp" },
+  { "name": "ask", "alt": "ask", "src": "./ask.webp" },
+  { "name": "blog1", "alt": "blog1", "src": "./blog1.webp" },
+  { "name": "explore1", "alt": "explore1", "src": "./explore1.webp" },
+  { "name": "img1", "alt": "img1", "src": "./img1.webp" },
+  { "name": "person1", "alt": "person1", "src": "./person1.webp" },
+  { "name": "person2", "alt": "person2", "src": "./person2.webp" },
+  { "name": "person3", "alt": "person3", "src": "./person3.webp" },
+  { "name": "person4", "alt": "person4", "src": "./person4.webp" },
+  { "name": "person5", "alt": "person5", "src": "./person5.webp" },
+  { "name": "book", "alt": "book", "src": "./book.webp" },
+  { "name": "stars", "alt": "stars", "src": "./stars.webp" }
+
+
+]

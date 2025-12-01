@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* global CSS settings */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+*:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* /global CSS settings */
+
+
+/* colors */
+.blueTextColor {
+  color: rgba(28, 110, 164, 1);
+}
+
+.blueBGColor {
+  background-color: rgba(28, 110, 164, 1);
+}
+
+/* utility for hero image to keep JSX tidy */
+.hero-image {
+  @apply w-[360px] h-[400px] rounded-[30px] overflow-hidden;
+}
+
+.text-primary {
+  color: #0f5e8b;
+}
+
+.bg-primary {
+  background-color: #0f5e8b;
+}
+
+/* home page */
+.mentor {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ffeeb5;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.mentor::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 20px;
+  border: 2px solid rgba(51, 161, 224, 0.8);
+  border-bottom: none;
+  border-right: none;
+  top: 31px;
+  left: -61%;
+  border-radius: 40px 0 0 0;
+  transform: rotate(-20deg);
+}
+
+
+.mentor::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 20px;
+  border: 2px solid rgba(51, 161, 224, 0.8);
+  border-bottom: none;
+  border-left: none;
+  top: 31px;
+  right: -61%;
+  border-radius: 0 40px 0 0;
+  transform: rotate(20deg);
+}
+
+/* Mentorships */
+/* .mentorships-header{
+  position: relative; 
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+}
+
+.mentorships-header::before {
+  content: "";
+  position: absolute;
+  bottom: -145px;
+  left: 33%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 130px;
+  font-weight: bolder;
+  border-radius: 0 0 450px 400px;
+  border-top: none;
+  border-right: 3px solid #3b719f;
+  transform: rotate(-130deg);
+  overflow: hidden;
+} */
