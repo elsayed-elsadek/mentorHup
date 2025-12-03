@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const navItems = [
   { label: 'Home', target: 'home' },
@@ -21,16 +20,41 @@ const scrollToSection = (id: string) => {
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeTarget, setActiveTarget] = useState('home');
+  // 1. إنشاء مرجع لحاوية الناف بار الرئيسية
+  const navbarRef = useRef<HTMLDivElement>(null); 
 
   const handleNavClick = (target: string) => {
     scrollToSection(target);
+    setActiveTarget(target); 
     setIsOpen(false);
   };
 
+  //  2. useEffect لإدارة حدث النقر خارج الناف بار
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+
+      if (navbarRef.current && !navbarRef.current.contains(event.target as Node) && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]); 
+
+  const activeColorClass = 'text-[#0f5e8b] font-semibold';
+  const inactiveColorClass = 'text-gray-600 hover:text-[#0f5e8b]';
+
+
   return (
-    <header className="w-full sticky top-0 z-40 bg-white/70 backdrop-blur-md">
+    <header ref={navbarRef} className="w-full sticky top-0 z-40 bg-white/70 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center justify-between bg-[#6FB7D61A] shadow-sm backdrop-blur-sm rounded-2xl px-4 sm:px-6 py-3">
+          
           {/* Logo */}
           <div
             className="flex items-center gap-3 cursor-pointer"
@@ -43,14 +67,13 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop navigation */}
-          <nav className="hidden lg:flex items-center gap-8 text-sm text-gray-600 flex-1 justify-center">
+          <nav className="hidden lg:flex items-center gap-8 text-sm flex-1 justify-center">
             {navItems.map((item) => (
               <button
                 key={item.target}
                 onClick={() => handleNavClick(item.target)}
-                className={`relative transition text-sm ${item.label === 'Home'
-                  ? 'text-[#0f5e8b] font-medium'
-                  : 'hover:text-[#0f5e8b]'
+                className={`relative transition text-sm ${
+                    item.target === activeTarget ? activeColorClass : inactiveColorClass
                   }`}
               >
                 {item.label}
@@ -109,13 +132,17 @@ const Navbar: React.FC = () => {
               <button
                 key={item.target}
                 onClick={() => handleNavClick(item.target)}
-                className="w-full text-left px-2 py-2 text-sm rounded-lg text-gray-700 hover:text-[#0f5e8b] hover:bg-[#e3f1fb]"
+                className={`w-full text-left px-2 py-2 text-sm rounded-lg ${
+                  item.target === activeTarget 
+                    ? 'text-white bg-[#0f5e8b] font-medium' 
+                    : 'text-gray-700 hover:text-[#0f5e8b] hover:bg-[#e3f1fb]'
+                }`}
               >
                 {item.label}
               </button>
             ))}
 
-            <div className="border-t border-gray-100 pt-3 mt-1 flex flex-col gap-2">
+            <div className="border-t border-gray-100 pt-3 mt-1 flex flex-col gap-4"> 
               <button className="w-full text-sm text-gray-600 text-left hover:text-[#0f5e8b]">
                 Sign in
               </button>

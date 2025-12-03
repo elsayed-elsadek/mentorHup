@@ -5,7 +5,13 @@ import ServicesSection from '../components/home/ServicesSection';
 import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
 import MentorshipsSection from '../components/home/MentorshipsSection';
 import AboutSection from '../components/home/AboutSection';
-import { ABOUT_IMAGES, ABOUT_STATS, MENTORSHIPS } from '../utils/constants';
+import { ABOUT_IMAGES, ABOUT_STATS, MENTORSHIPS , dummyBlogs} from '../utils/constants';
+import Blog from '../components/home/Blog';
+import Testimonials from '../components/home/Testimonials';
+import ContactUsSection from '../components/home/ContactUsSection';
+import FooterSection from '../components/home/FooterSection';
+
+
 
 const Home: React.FC = () => {
   const img = useHomeImages();
@@ -16,11 +22,11 @@ const Home: React.FC = () => {
 
       {/* Hero */}
       <section id="home" className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 py-10 lg:py-24 grid grid-cols-1 lg:grid-cols-2 md:gap-10 items-center">
 
           {/* Left content */}
-          <div className="z-10">
-            <h1 className="blueTextColor text-4xl md:text-6xl font-extrabold  leading-tight">
+          <div className="z-10 mb-10 md:mb-0">
+            <h1 className="blueTextColor text-3xl md:text-5xl font-extrabold  leading-tight">
               Learn.Mentor. Grow
               <br />
               <span className="block">All in one place.</span>
@@ -30,9 +36,9 @@ const Home: React.FC = () => {
               Join a community where mentors share experience and students grow with real-world guidance
             </p>
 
-            <div className="mt-8 flex items-center gap-4">
-              <button className="px-6 py-3 blueBGColor text-white rounded-full font-medium">Become a mentor</button>
-              <button className="px-6 py-3 border border-[#bcd7ee] rounded-full blueTextColor font-medium">Join now</button>
+            <div className="mt-8 flex items-center gap-4 flex-wrap">
+              <button className="px-5 py-2 blueBGColor text-white rounded-full font-medium">Become a mentor</button>
+              <button className="px-5 py-2 border border-[#bcd7ee] rounded-full blueTextColor font-medium">Join now</button>
             </div>
 
             <div className="mt-6 flex items-center gap-3">
@@ -52,11 +58,11 @@ const Home: React.FC = () => {
 
               {/* decorative floating cards */}
 
-              <div className="absolute left-10 z-10 -top-20 ">
-                <img src={img.book || ''} alt="book" className="w-32 h-40 rounded-lg" />
+              <div className="absolute left-10 z-10 md:-top-20 -top-14 ">
+                <img src={img.book || ''} alt="book" className="lg:w-32 w-24 lg:h-40 rounded-lg" />
               </div>
 
-              <div className="absolute -left-16 z-10 top-20 bg-white shadow-lg rounded-lg px-4 py-3 flex items-center gap-3">
+              <div className="absolute lg:-left-5 z-10 lg:top-20 top-[60%] left-2 bg-white shadow-lg rounded-lg px-4 py-3 flex items-center gap-3">
                 <img src={img.person3 || ''} alt="m" className="w-10 h-10 rounded-full" />
                 <div>
                   <div className="text-sm font-semibold">100+</div>
@@ -66,7 +72,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
 
-              <div className="absolute z-10 -left-12 bottom-20 bg-white shadow-lg rounded-lg px-4 py-3 flex items-center gap-3">
+              <div className="absolute z-10 lg:-left-12 lg:top-[65%] left-2 top-[75%] bg-white shadow-lg rounded-lg px-4 py-3 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-md bg-amber-100 flex items-center justify-center">⭐</div>
                 <div>
                   <div className="text-sm font-semibold">4.9/5.00</div>
@@ -74,12 +80,12 @@ const Home: React.FC = () => {
                 </div>
               </div>
 
-              <div className="absolute -right-4 z-10 top-10 ">
+              <div className="absolute -right-4 z-10 top-10 hidden lg:block">
                 <img src={img.stars || ''} alt="stars" className="w-25 h-20 rounded-lg opacity-75" />
               </div>
 
               {/* main image */}
-              <div className="relative w-[360px] h-[400px]">
+              <div className="relative lg:w-[360px] w-[90%] h-[400px]">
                 {img.img1 ? (
                   <img src={img.img1} alt="students" className="w-full h-full object-cover rounded-[30px] shadow-2xl" />
                 ) : (
@@ -113,6 +119,26 @@ const Home: React.FC = () => {
       {/* About section */}
       <section id="about">
         <AboutSection images={ABOUT_IMAGES} stats={ABOUT_STATS} />
+      </section>
+
+      {/* Blog section */}
+      <section id="blogs">
+        <Blog dummyBlogs={dummyBlogs}/>
+      </section>
+
+       {/* Testimonials section */}
+       <section id="testimonials">
+        <Testimonials />
+      </section>
+
+         {/* ContactUs section */}
+         <section id="contactUs">
+        <ContactUsSection />
+      </section>
+
+        {/* FooterSection section */}
+        <section id="footerSection">
+        <FooterSection />
       </section>
     </div>
   );

@@ -139,3 +139,32 @@ a {
   transform: rotate(-130deg);
   overflow: hidden;
 } */
+
+/* logo strip */
+
+/* تحديد الحركة (Keyframes) */
+@keyframes marquee {
+  from {
+    transform: translateX(0%); 
+  }
+  to {
+    transform: translateX(-100%); 
+  }
+}
+
+/* التنسيق الأساسي لشريط الشعارات المتحرك */
+.marquee-container {
+  overflow: hidden; 
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 30s linear infinite; 
+  width: max-content;
+}
+
+/* إيقاف الحركة عند الـ Hover */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}

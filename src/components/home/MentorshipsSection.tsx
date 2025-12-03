@@ -46,8 +46,8 @@ const MentorshipsCarousel: React.FC<Props> = ({ mentorships }) => {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <div className="text-center mb-12">
-          <h2 className="mentorships-header text-3xl md:text-4xl font-bold text-gray-800">
+        <div className="text-center mb-12 ">
+          <h2 className="mentorships-header text-xl md:text-3xl font-bold text-gray-800 ">
             Explore our <span className="text-primary">Mentorships</span>
           </h2>
           <div className="flex justify-center gap-2 sm:gap-3 mt-6 flex-wrap">

@@ -1,21 +1,22 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 type Props = {
+  icon: never ,
   title: string;
   description: string;
-  icon?: React.ReactNode;
 };
 
 const ServiceCard: React.FC<Props> = ({ title, description, icon }) => {
   return (
     <div 
     className="bg-white rounded-2xl w-full shadow-lg p-6 
-    lg:min-h-[250px]
+    lg:h-[230px]
 
     grid  gap-4 relative items-center">
       {/* small icon box */}
       <div className="flex-shrink-0 w-12 h-12 rounded-md bg-[#f1f6fb] flex items-center justify-center text-[#0f5e8b] text-lg shadow-sm">
-        {icon ?? <span className="font-bold">•</span>}
+      <FontAwesomeIcon icon={icon} className='text-2xl'/>
       </div>
 
       <div>
