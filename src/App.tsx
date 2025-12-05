@@ -5,21 +5,58 @@ import './index.css'
 import BecomeMentor from './pages/BecomeMentor'
 import GetStarted from './pages/GetStarted'
 import NotFound from './pages/NotFound'
+import { useLocation } from 'react-router-dom'
+import Login from "./pages/Login/Login.tsx";
+import Register from "./pages/register/Register.tsx";
+import { Verify } from "./pages/verifiy/Verify.tsx";
+import Success from "./pages/success-register/success.tsx";
 
+// function App() {
+//     const location = useLocation();
 
+//     const hideNavbar = ["/login", "/register", "/verify", "/success"].includes(
+//       location.pathname
+//     );
+//   return (
+//     <>
+//       {!hideNavbar && <Navbar />}
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/become-mentor" element={<BecomeMentor />} />
+//         <Route path="/start-Started" element={<GetStarted />} />
+//         <Route path="*" element={<NotFound />} />
+//         <Route path="/login" element={<Login />} />
+//         <Route path="/register" element={<Register />} />
+//         <Route path="/verify" element={<Verify />} />
+//         <Route path="/success" element={<Success />} />
+//       </Routes>
+//     </>
+//   );
+// }
 function App() {
+  const location = useLocation();
+
+  // بدل hide، نستخدم showNavbar
+  const showNavbar = ["/"].includes(
+    location.pathname
+  );
+
   return (
-    <> 
-    <Navbar/>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/become-mentor" element={<BecomeMentor />} />
-      <Route path="/start-Started" element={<GetStarted />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      {showNavbar && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/become-mentor" element={<BecomeMentor />} />
+        <Route path="/start-Started" element={<GetStarted />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/verify" element={<Verify />} />
+        <Route path="/success" element={<Success />} />
+      </Routes>
     </>
-   
-  )
+  );
 }
+
 
 export default App
