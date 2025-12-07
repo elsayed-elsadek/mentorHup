@@ -10,33 +10,14 @@ import Login from "./pages/Login/Login.tsx";
 import Register from "./pages/register/Register.tsx";
 import { Verify } from "./pages/verifiy/Verify.tsx";
 import Success from "./pages/success-register/success.tsx";
+import Knowabout from  "./pages/mentorinfo/Knowabout.tsx"
 
-// function App() {
-//     const location = useLocation();
 
-//     const hideNavbar = ["/login", "/register", "/verify", "/success"].includes(
-//       location.pathname
-//     );
-//   return (
-//     <>
-//       {!hideNavbar && <Navbar />}
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/become-mentor" element={<BecomeMentor />} />
-//         <Route path="/start-Started" element={<GetStarted />} />
-//         <Route path="*" element={<NotFound />} />
-//         <Route path="/login" element={<Login />} />
-//         <Route path="/register" element={<Register />} />
-//         <Route path="/verify" element={<Verify />} />
-//         <Route path="/success" element={<Success />} />
-//       </Routes>
-//     </>
-//   );
-// }
+
+
 function App() {
   const location = useLocation();
 
-  // بدل hide، نستخدم showNavbar
   const showNavbar = ["/"].includes(
     location.pathname
   );
@@ -53,6 +34,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/verify" element={<Verify />} />
         <Route path="/success" element={<Success />} />
+      <Route path="/know-about" element={<Knowabout/>} />
       </Routes>
     </>
   );

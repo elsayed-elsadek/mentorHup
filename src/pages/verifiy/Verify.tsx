@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
 import { CodeInput } from "../../components/verify-com/CodeInput";
 import { Timer } from "../../components/verify-com/Timer";
 import { ConfirmButton } from "../../components/verify-com/ConfirmButton";

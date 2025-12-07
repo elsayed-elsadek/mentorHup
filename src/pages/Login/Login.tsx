@@ -239,7 +239,7 @@ const Login: React.FC = () => {
           )}
 
           {/* Sign up */}
-          <p className="text-center text-gray-600 mt-8">
+          <p className="text-center text-gray-600 mt-0">
             Don't have an account?{" "}
             <Link to="/register" className="text-blue-600 font-medium">
               Create one

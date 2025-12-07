@@ -1,4 +1,4 @@
-// features/auth/types.ts
+
 export interface FormData {
   firstName: string;
   lastName: string;
@@ -6,8 +6,8 @@ export interface FormData {
   phone?: string;
   password: string;
   confirmPassword: string;
-  agreeTerms?: boolean;   // ✅ أضفنا agreeTerms
-  rememberMe?: boolean;   // ✅ أضفنا rememberMe
+  agreeTerms?: boolean;  
+  rememberMe?: boolean;   
 }
 
 export interface FormErrors {

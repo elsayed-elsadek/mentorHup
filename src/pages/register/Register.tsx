@@ -33,7 +33,7 @@ const Register: React.FC = () => {
 
 
   return (
-    <BasicLayout>
+    <BasicLayout >
       <form onSubmit={handleRegister} className="flex flex-col gap-3 w-full ">
         <FormHeader />
         <JoinAsToggle joinAs={form.joinAs} setJoinAs={form.setJoinAs} />
