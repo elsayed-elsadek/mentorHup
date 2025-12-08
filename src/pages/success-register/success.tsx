@@ -12,7 +12,7 @@ const Success: React.FC = () => {
         <div className="w-full h-full flex justify-center items-center">
           <Frame />
         </div>
-        <NextButton className="ml-auto mt-10" />
+        <NextButton className="ml-auto mt-7" />
      
     </BasicLayout>
   );
