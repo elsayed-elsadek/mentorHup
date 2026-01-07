@@ -21,7 +21,7 @@ export const JoinAsToggle: React.FC<Props> = ({ joinAs, setJoinAs }) => {
         flex flex-row
         justify-between
         items-center
-        w-full max-w-[528px] mx-2
+        w-full max-w-[528px] mx-0
       "
     >
       

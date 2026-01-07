@@ -1,9 +1,9 @@
 
 import { useState, useRef } from "react";
-import type { FormData, FormErrors, JoinAs } from "../types/auth";
+import type { RegisterFormData, FormErrors, JoinAs } from "../types/auth";
 
 export const useRegisterForm = () => {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<RegisterFormData>({
     firstName: "",
     lastName: "",
     email: "",
@@ -26,7 +26,7 @@ export const useRegisterForm = () => {
   const emailRegex = /^\S+@\S+\.\S+$/;
   const phoneRegex = /^[0-9]{10,15}$/;
 
-  const handleInputChange = (field: keyof FormData, value: string) => {
+  const handleInputChange = (field: keyof RegisterFormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     setErrors((prev) => ({ ...prev, [field]: undefined }));
   };

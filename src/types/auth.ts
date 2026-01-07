@@ -1,13 +1,18 @@
 
-export interface FormData {
+export interface RegisterFormData {
   firstName: string;
   lastName: string;
   email: string;
   phone?: string;
   password: string;
   confirmPassword: string;
-  agreeTerms?: boolean;  
-  rememberMe?: boolean;   
+  agreeTerms?: boolean;
+}
+
+export interface LoginFormData {
+  email: string;
+  password: string;
+  rememberMe?: boolean;
 }
 
 export interface FormErrors {
@@ -17,12 +22,9 @@ export interface FormErrors {
   phone?: string;
   password?: string;
   confirmPassword?: string;
+  agreeTerms?: string;
+  rememberMe?: string;
   general?: string;
-    agreeTerms?: string;    
-  rememberMe?: string;    
 }
 
 export type JoinAs = "mentor" | "student";
-// export type AuthMode = "login" | "register";
-// export type AuthAction = "login" | "register" | "resetPassword";
-// export type PasswordAction = "reset" | "change";
