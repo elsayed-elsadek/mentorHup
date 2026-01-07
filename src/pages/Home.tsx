@@ -137,7 +137,7 @@ const Home: React.FC = () => {
       </section>
 
         {/* FooterSection section */}
-        <section id="footerSection">
+        <section id="footerSection" className="mt-20">
         <FooterSection />
       </section>
     </div>

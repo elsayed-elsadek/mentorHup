@@ -46,7 +46,7 @@ const FooterSection: React.FC = () => {
             </p>
 
             <a
-              href="#register"
+              href="/register"
               className="py-3 px-10 inline-block bg-[#0f5e8b] text-white rounded-2xl font-semibold hover:bg-[#147fb8] transition"
             >
               Register Now
